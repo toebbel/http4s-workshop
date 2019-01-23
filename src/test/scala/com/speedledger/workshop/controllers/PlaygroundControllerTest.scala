@@ -35,5 +35,11 @@ class PlaygroundControllerTest extends org.scalatest.FreeSpec with MustMatchers 
         client.expect[String](req).unsafeRunSync() mustEqual "42"
       }
     }
+
+    "/dateDiff/{dateA}/and/{dateB}" - {
+      "difference in days" in {
+        client.expect[String]("/dateDiff/2018-01-23/and/2018-01-24").unsafeRunSync() mustEqual "that is 1 days"
+      }
+    }
   }
 }

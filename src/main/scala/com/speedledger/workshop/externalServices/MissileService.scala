@@ -12,7 +12,6 @@ sealed trait MissileServiceError
 case class MissileNotFound(missileId: String) extends MissileServiceError
 case class MissileNotArmed(missileId: String) extends MissileServiceError
 case class MissileNotInMaintenance(missileId: String) extends MissileServiceError
-case class MissileExploded(missileId: String) extends MissileServiceError
 
 object MissileService {
   private val defaultData = Map(

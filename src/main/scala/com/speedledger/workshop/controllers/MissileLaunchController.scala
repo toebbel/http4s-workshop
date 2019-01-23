@@ -35,11 +35,12 @@ object MissileLaunchController extends MissileServiceCodec {
 
     val notFoundError = json""" {"error": "missile not found"} """
     result.value.flatMap {
-      case Left(MissileNotFound(id)) => Response[IO](status = NotFound).withBody(notFoundError)
-      case err@(Left(MissileNotArmed(_)) | Left(MissileNotInMaintenance(_))) => Response[IO](status = MethodNotAllowed).withBody(json""" {"error": "oh no! you can't do that."} """)
-      case Left(error) => Response[IO](status = InternalServerError).withBody(json""" {"error": "boom?"} """)
-
       case Right(content) => Response[IO](status = Ok).withBody(content.asJson)
+
+        // MissileNotFound must return 404
+        // MissileNotInMaintenance must return MethodNotAllowed (405)
+        // MissileNotInMaintenance must return MethodNotAllowed (405)
+      case _ => ???
     }
   }
 }
