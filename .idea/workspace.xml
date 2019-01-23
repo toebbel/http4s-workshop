@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="56e1f63a-6017-4fe5-8d8e-ef0ece87d03b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/controllers/MissileLaunchController.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/controllers/MissileLaunchController.scala" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/controllers/PlaygroundController.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/controllers/PlaygroundController.scala" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/externalServices/MissileService.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/externalServices/MissileService.scala" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/com/speedledger/workshop/controllers/PlaygroundControllerTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/com/speedledger/workshop/controllers/PlaygroundControllerTest.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,14 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlaygroundController.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/controllers/PlaygroundController.scala">
+      <file leaf-file-name="PlaygroundControllerTest.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/com/speedledger/workshop/controllers/PlaygroundControllerTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#46#84#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="207">
+              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -224,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="ScalaTest.PlaygroundControllerTest.PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days">
+  <component name="RunManager" selected="ScalaTest.PlaygroundControllerTest.PlaygroundController GET /ping pongs&#10;PlaygroundController /calc/{a}/add/{b} adds up two positive numbers&#10;PlaygroundController /headers/{headerName} returns 'header not found' if header was not passed&#10;PlaygroundController /headers/{headerName} returns value of passed header&#10;PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -272,22 +266,6 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
-    <configuration name="MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest GET missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest GET missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest GET missile armed POST missile/{id}/fire becomes midAir" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="http4s-workshop" />
-      <setting name="path" value="com.speedledger.workshop.controllers.MissileLaunchControllerTest" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <envs />
-      <setting name="testKind" value="Test name" />
-      <setting name="path" value="com.speedledger.workshop.controllers.MissileLaunchControllerTest" />
-      <setting name="testName" value="MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest GET missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest GET missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest GET missile armed POST missile/{id}/fire becomes midAir" />
-    </configuration>
     <configuration name="MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest missile is armed POST missile/{id}/fire becomes midAir" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="http4s-workshop" />
@@ -304,7 +282,22 @@
       <setting name="path" value="com.speedledger.workshop.controllers.MissileLaunchControllerTest" />
       <setting name="testName" value="MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest missile is armed POST missile/{id}/fire becomes midAir" />
     </configuration>
-    <configuration name="PlaygroundControllerTest.PlaygroundController GET /ping pongs" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+    <configuration name="PlaygroundControllerTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="http4s-workshop" />
+      <setting name="path" value="com.speedledger.workshop.controllers.PlaygroundControllerTest" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <envs />
+      <setting name="testKind" value="Class" />
+      <setting name="path" value="com.speedledger.workshop.controllers.PlaygroundControllerTest" />
+    </configuration>
+    <configuration name="PlaygroundControllerTest.PlaygroundController GET /ping pongs&#10;PlaygroundController /calc/{a}/add/{b} adds up two positive numbers&#10;PlaygroundController /headers/{headerName} returns 'header not found' if header was not passed&#10;PlaygroundController /headers/{headerName} returns value of passed header&#10;PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="http4s-workshop" />
       <setting name="path" value="com.speedledger.workshop.controllers.PlaygroundControllerTest" />
@@ -318,7 +311,7 @@
       <envs />
       <setting name="testKind" value="Test name" />
       <setting name="path" value="com.speedledger.workshop.controllers.PlaygroundControllerTest" />
-      <setting name="testName" value="PlaygroundController GET /ping pongs" />
+      <setting name="testName" value="PlaygroundController GET /ping pongs&#10;PlaygroundController /calc/{a}/add/{b} adds up two positive numbers&#10;PlaygroundController /headers/{headerName} returns 'header not found' if header was not passed&#10;PlaygroundController /headers/{headerName} returns value of passed header&#10;PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" />
     </configuration>
     <configuration name="PlaygroundControllerTest.PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -389,19 +382,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="ScalaTest.MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest GET missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest GET missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest GET missile armed POST missile/{id}/fire becomes midAir" />
-      <item index="1" class="java.lang.String" itemvalue="ScalaTest.MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest missile is armed POST missile/{id}/fire becomes midAir" />
-      <item index="2" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController GET /ping pongs" />
-      <item index="3" class="java.lang.String" itemvalue="ScalaTest.ScalaTests in 'controllers'" />
-      <item index="4" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" />
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest missile is armed POST missile/{id}/fire becomes midAir" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.ScalaTests in 'controllers'" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController GET /ping pongs&#10;PlaygroundController /calc/{a}/add/{b} adds up two positive numbers&#10;PlaygroundController /headers/{headerName} returns 'header not found' if header was not passed&#10;PlaygroundController /headers/{headerName} returns value of passed header&#10;PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" />
-        <item index="1" class="java.lang.String" itemvalue="ScalaTest.MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest missile is armed POST missile/{id}/fire becomes midAir" />
-        <item index="2" class="java.lang.String" itemvalue="ScalaTest.ScalaTests in 'controllers'" />
-        <item index="3" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController GET /ping pongs" />
-        <item index="4" class="java.lang.String" itemvalue="ScalaTest.MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest GET missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest GET missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest GET missile armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest GET missile armed POST missile/{id}/fire becomes midAir" />
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController GET /ping pongs&#10;PlaygroundController /calc/{a}/add/{b} adds up two positive numbers&#10;PlaygroundController /headers/{headerName} returns 'header not found' if header was not passed&#10;PlaygroundController /headers/{headerName} returns value of passed header&#10;PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.PlaygroundControllerTest.PlaygroundController /dateDiff/{dateA}/and/{dateB} difference in days" />
+        <item index="3" class="java.lang.String" itemvalue="ScalaTest.MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with no missiles returns 404&#10;MissileLaunchControllerTest GET missile with two missiles returns correct missile&#10;MissileLaunchControllerTest missile in maintenance PUT missile/{id}/arm becomes armed&#10;MissileLaunchControllerTest missile in maintenance DELETE missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed PUT missile/{id}/arm returns error&#10;MissileLaunchControllerTest missile is armed DELETE missile/{id}/arm returns to maintenance&#10;MissileLaunchControllerTest missile is armed POST missile/{id}/fire becomes midAir" />
+        <item index="4" class="java.lang.String" itemvalue="ScalaTest.ScalaTests in 'controllers'" />
       </list>
     </recent_temporary>
   </component>
@@ -466,7 +459,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548073200447</updated>
-      <workItem from="1548073203990" duration="28376000" />
+      <workItem from="1548073203990" duration="29043000" />
     </task>
     <servers />
   </component>
@@ -486,11 +479,11 @@
     <history-entry file="MissileLaunchControllerTest_MissileLaunchControllerTest_GET_missile_with_two_missiles_returns_correct_missile - 2019.01.22 at 19h 28m 49s.xml">
       <configuration name="MissileLaunchControllerTest.MissileLaunchControllerTest GET missile with two missiles returns correct missile" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="MissileLaunchControllerTest_MissileLaunchControllerTest_with_no_missiles_returns_404 - 2019.01.22 at 19h 12m 04s.xml">
-      <configuration name="MissileLaunchControllerTest.MissileLaunchControllerTest with no missiles returns 404" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="MissileLaunchControllerTest_MissileLaunchControllerTest_with_no_missiles_returns_404 - 2019.01.22 at 19h 13m 20s.xml">
       <configuration name="MissileLaunchControllerTest.MissileLaunchControllerTest with no missiles returns 404" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PlaygroundControllerTest - 2019.01.23 at 10h 04m 28s.xml">
+      <configuration name="PlaygroundControllerTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
     <history-entry file="PlaygroundControllerTest_PlaygroundController_GET__ping_pongs - 2019.01.22 at 19h 42m 14s.xml">
       <configuration name="PlaygroundControllerTest.PlaygroundController GET /ping pongs" configurationId="ScalaTestRunConfiguration" />
@@ -503,11 +496,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28376000" />
+    <option name="totallyTimeSpent" value="29043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="999" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Key Promoter X" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -521,14 +513,14 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39909297" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39823008" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19311875" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46460176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46238938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22588523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -651,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/com/speedledger/workshop/controllers/PlaygroundControllerTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/speedledger/workshop/controllers/PlaygroundController.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -666,6 +650,14 @@
           <folding>
             <element signature="e#46#84#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/com/speedledger/workshop/controllers/PlaygroundControllerTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
