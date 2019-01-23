@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+<body>
+    <style type="text/css">
+    .reveal p {
+        text-align: center;
+    }
+    .reveal ul {
+        display: block;
+    }
+    .reveal ol {
+        display: block;
+    }
+</style>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown>
+            <textarea data-template>
+                # http4s
+
+                ### Functional HTTP client and Server
+            </textarea>
+        </section>
+        <section data-markdown>
+            <textarea data-template>
+                ## Content
+
+                - cats.effect
+                - EitherT
+                - http4s server
+                - ~~circe encoder / decoder~~
+                - ~~http4s client~~
+            </textarea>
+        </section>
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    <h2>cats.effect</h2>
+
+
+                    Something different than:
+                    - Javascript Promises
+                    - Scala's future
+
+                    Something similar to:
+                    - fs2.task
+                    - scalaz's ioeffect
+
+                    Lazy and asynchronous execution (Monad ➡ `flatMap`!)
+                </textarea>
+            </section>
+            <section>
+                    <h2>cats.effect</h2>
+
+                    <pre><code data-trim>
+IO.pure(42) // => : IO[Int]
+IO.pure(println("fooooo")) // don't do this
+IO(println("foooo"))
+                    </code></pre>
+            </section>
+            <section>
+                    <h2>cats.effect</h2>
+
+                    <pre><code data-trim>
+def add(t: (Int, Int)) = IO(t._1 + t._2)
+
+val inputs = NonEmptyList.of((1, 2), (3, 4))
+val listOfIO = inputs.map(t => add(t))
+// => : NonEmptyList[IO[Int]]
+
+val singleIO = list.parSequence
+// => : IO[NonEmptyList[Int]]
+
+val result = singleTask.unsafeRunSync()
+// => : NonEmptyList[Int]
+                    </code></pre>
+            </section>
+            <section>
+                <pre class="stretch"><code data-trim>
+import cats.effect._
+import cats.syntax.all._
+import scala.concurrent.duration._
+
+def retryWithBackoff[A](ioa: IO[A], initialDelay: FiniteDuration, maxRetries: Int)
+(implicit timer: Timer[IO]): IO[A] = {
+
+    ioa.handleErrorWith { error =>
+        if (maxRetries > 0)
+            IO.sleep(initialDelay) *> retryWithBackoff(ioa, initialDelay * 2, maxRetries - 1)
+        else
+            IO.raiseError(error)
+    }
+}
+        </code><pre>
+        </section>
+    </section>
+    <section>
+
+        <h1>Either And T</h1>
+
+        <pre><code data-trim>
+            val task: IO[Either[Error, Result]] = ???
+
+            task.map(_.right.map(result => ???))
+        </code></pre>
+        <p class="fragment">
+
+            <pre class="fragment"><code data-trim>
+val task: EitherT[IO, Error, Result]] = ???
+
+task.map(result => ???)
+
+task.value // => : IO[Either[Error, Result]]
+
+            </code></pre>
+        </p>
+    </section>
+    <section>
+        <section>
+            <h1>HTTP4s</h1>
+            typeful, functional, streaming
+            
+            <pre><code data-trim>
+                import cats.effect._, org.http4s._, org.http4s.dsl.io._
+                import org.http4s.implicits._
+                import scala.concurrent.ExecutionContext.Implicits.global
+            </code></pre>
+        </section>
+        <section>
+            <h1>Basics</h1>
+            <pre class="strech"><code data-trim>
+case class Tweet(id: Int, message: String)
+
+implicit def tweetEncoder: EntityEncoder[IO, Tweet] = ???
+
+implicit def tweetsEncoder: EntityEncoder[IO, Seq[Tweet]] = ???
+
+def getTweet(tweetId: Int): IO[Tweet] = ???
+
+def getPopularTweets(): IO[Seq[Tweet]] = ???
+
+val tweetService = HttpService[IO] {
+    case GET -> Root / "tweets" / "popular" =>
+        Ok(getPopularTweets())
+    case GET -> Root / "tweets" / IntVar(tweetId) =>
+        getTweet(tweetId).flatMap(Ok(_))
+}
+            </code></pre>
+        </section>
+        <section>
+            <h1>Request Matching</h1>
+            <pre class="strech"><code data-trim>
+HttpService[IO] {
+    case GET -> Root / "hello" / name => Ok(s"Hello, $name!")
+
+    case POST -> "ping" => Ok("pong")
+
+    case GET -> "hello" /: rest =>
+        Ok(s"""Hello, ${rest.toList.mkString(" and ")}!""")
+
+    case GET -> Root / "users" / IntVar(userId) =>
+        Ok(getUserName(userId))
+
+    case req@GET -> Root / "headers" / headerName =>
+        Ok(req.headers.mkString(", "))
+}
+            </code></pre>
+        </section>
+        <section>
+            <h1>Request Matching</h1>
+            <pre class="strech"><code data-trim>
+def getTemperatureForecast(date: LocalDate) = IO(42.23)
+
+object LocalDateVar {
+  def unapply(str: String): Option[LocalDate] = {
+    if (!str.isEmpty)
+      Try(LocalDate.parse(str)).toOption
+    else
+      None
+  }
+}
+
+val dailyWeatherService = HttpService[IO] {
+  case GET -> Root / "weather" / LocalDateVar(localDate) =>
+    Ok(getTemperatureForecast(localDate)
+        .map(s"The temperature on $localDate will be: " + _))
+}
+            </code></pre>
+
+            <small><a href="https://http4s.org/v0.18/dsl/">read about query parameters</a></small>
+        </section>
+        <section>
+            <h1>Payloads</h1>
+            <pre class="strech"><code data-trim>
+                Ok("Received request.").unsafeRunSync
+                // Response(status=200,
+                            headers=Headers(Content-Type: text/plain;
+                            charset=UTF-8,
+                            Content-Length: 17))
+
+                Ok("binary".getBytes(UTF_8)).unsafeRunSync
+                // Response(status=200,
+                            headers=Headers(Content-Type: application/octet-stream,
+                            Content-Length: 6))
+            </code></pre>
+            <small><a href="https://http4s.org/v0.18/api/org/http4s/entityencoder$">list of predefined encoders</a></small>
+        </section>
+        <section>
+            <h1>From Either to Response</h1>
+            <pre class="strech"><code data-trim>
+val notFoundPayload = json""" {"error": "missile not found"} """
+
+// some calculation
+val result: IO[Either[Error,Success]] = ???
+
+result.flatMap {
+    case Left(_) =>
+        Response[IO](status = NotFound).withBody(notFoundPayload)
+
+    case Right(entity) =>
+        Response[IO](status = Ok).withBody(content.asJson)
+}
+            </code></pre>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Coding Time</h2>
+            <pre><code>
+                PlaygroundController
+            </code></pre>
+        </section>
+        <section>
+            <h2>Coding Time</h2>
+            <pre><code>
+                MissileLaunchController
+
+          PUT arm              POST fire
+     +-------------------+ +----------------+
+     |                   | |                |
++----+--------+        +-v-+---+       +----v----+
+| Maintenace  |        | Armed |       |  MidAir |
++-----------+-+        +-+-----+       +---------+
+            ^            |
+            |            |
+            +------------+
+              DELETE arm
+            </code></pre>
+
+            check out <em>MissileServiceError</em> and add cases in <em>MissileLaunchController.EitherToResponse</em>
+        </section>
+    </section>
+</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        parallaxBackgroundHorizontal: 100,
+        history: true,
+        dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+    });
+</script>
+</body>
+</html>
