@@ -7,7 +7,7 @@
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -39,6 +39,14 @@
                 # org.http4s
 
                 ### Functional HTTP Client and Server
+
+                <center>
+                    <small>
+                        <a href="https://github.com/toebbel/http4s-workshop">
+                            <img src="github-logo.png" alt="github" style="border-width: 0px; background: none; border: none; box-shadow: none;"/>
+                        </a>
+                    </small>
+                </center>
             </textarea>
         </section>
         <section data-markdown>
@@ -116,7 +124,7 @@ val result = singleTask.unsafeRunSync()
             </section>
             <section>
                 <h2>composing effects</h2>
-                <pre class="stretch"><code data-trim class="scala">
+                <pre class="stretch"><code class="scala">
 import cats.effect._
 import cats.syntax.all._
 import scala.concurrent.duration._
@@ -131,7 +139,7 @@ def retryWithBackoff[A](ioa: IO[A], initialDelay: FiniteDuration, maxRetries: In
             IO.raiseError(error)
     }
 }
-        </code><pre>
+        </code></pre>
         </section>
     </section>
     <section>
