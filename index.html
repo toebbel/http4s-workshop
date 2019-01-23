@@ -144,7 +144,7 @@ def retryWithBackoff[A](ioa: IO[A], initialDelay: FiniteDuration, maxRetries: In
     </section>
     <section>
 
-        <h1>Either And T</h1>
+        <h2>Either And T</h2>
 
         <pre><code data-trim>
             val task: IO[Either[Error, Result]] = ???
@@ -163,7 +163,7 @@ task.value // => : IO[Either[Error, Result]]
     </section>
     <section>
         <section>
-            <h1>HTTP4s</h1>
+            <h2>HTTP4s</h2>
             typeful, functional, streaming
             
             <pre><code data-trim class="scala">
@@ -173,7 +173,7 @@ task.value // => : IO[Either[Error, Result]]
             </code></pre>
         </section>
         <section>
-            <h1>Basics</h1>
+            <h2>Basics</h2>
             <pre class="strech"><code data-trim class="scala">
 case class Tweet(id: Int, message: String)
 
@@ -194,7 +194,7 @@ val tweetService = HttpService[IO] {
             </code></pre>
         </section>
         <section>
-            <h1>Request Matching</h1>
+            <h2>Request Matching</h2>
             <pre class="strech"><code data-trim class="scala">
 HttpService[IO] {
     case GET -> Root / "hello" / name => Ok(s"Hello, $name!")
@@ -213,7 +213,7 @@ HttpService[IO] {
             </code></pre>
         </section>
         <section>
-            <h1>Request Matching</h1>
+            <h2>Request Matching</h2>
             <pre class="strech"><code data-trim class="scala">
 def getTemperatureForecast(date: LocalDate) = IO(42.23)
 
@@ -236,7 +236,7 @@ val dailyWeatherService = HttpService[IO] {
             <small><a href="https://http4s.org/v0.18/dsl/">read about query parameters</a></small>
         </section>
         <section>
-            <h1>Payloads</h1>
+            <h2>Payloads</h2>
             <pre class="strech"><code data-trim class="scala">
                 Ok("Received request.").unsafeRunSync
                 /* Response(status=200,
@@ -252,7 +252,7 @@ val dailyWeatherService = HttpService[IO] {
             <small><a href="https://http4s.org/v0.18/api/org/http4s/entityencoder$">list of predefined encoders</a></small>
         </section>
         <section>
-            <h1>From Either to Response</h1>
+            <h2>Either to Response</h2>
             <pre class="strech"><code data-trim class="scala">
 val notFoundPayload = json""" {"error": "missile not found"} """
 
